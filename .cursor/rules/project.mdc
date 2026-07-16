@@ -1,0 +1,19 @@
+---
+description: astro-supabase-auth-template conventions and onboarding for agents
+alwaysApply: true
+---
+
+# astro-supabase-auth-template
+
+Read **`INSTRUCTIONS.md`** first — Supabase project, Google Cloud OAuth app, Supabase Google provider, redirect URLs, and `.env` are required before the app works in production.
+
+- Feature contract: `index.md`
+- Agent skills: `.agents/skills/README.md`
+- Astro shell: `src/pages/index.astro` mounts `src/vue/App.vue` with `client:only="vue"`
+- Vue SPA: `src/vue/` — `router/`, `composables/useAuth.ts`, `views/`, `api/`, `lib/supabase.ts`
+- Routes: `/`, `/login`, `/signup`, `/recover-password`, `/reset-password`
+- API client: `src/vue/api/api.ts` (`apiFetch`) → worker at `VITE_API_BASE_URL`
+
+Auth is Supabase-only on the client; domain API calls go to the worker, not `supabase.from()` for app data.
+
+Pairing backend (not in this repo): [cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template) — same Supabase project; worker `ALLOWED_ORIGINS` must include this app's origin.
