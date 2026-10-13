@@ -72,7 +72,7 @@ Supabase + Google OAuth setup: [`docs/SUPABASE_SETUP.md`](docs/SUPABASE_SETUP.md
 
 Target: **Cloudflare Pages**. Build command `bun run build`, output directory `dist`. Set the same `VITE_*` variables in the Pages project settings. `public/_redirects` sends all paths to `index.html` for vue-router history mode.
 
-Maintained by [xarlizard](https://github.com/jane).
+Maintained by [charlite](https://github.com/jane).
 
 ## License
 
